@@ -62,16 +62,16 @@ end
 function vectors = updateVectors(data, assignments, vectors)
 numPoints = size(data, 1);
 for i = 1:numPoints
-    mean = 0;
+    centroid = 0;
     count = 0;
     for j = 1:numPoints
         if assignments(j) == i
-            mean = mean + data(j);
+            centroid = centroid + data(j);
             count = count + 1;
         end
     end
     % reestablish center of gravity
-    vectors(i) = mean/count;
+    vectors(i) = centroid/count;
 end
 end
 
